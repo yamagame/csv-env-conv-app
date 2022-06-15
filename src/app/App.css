@@ -1,0 +1,139 @@
+:root {
+  --csv-line-padding: 2px;
+  --csv-delete-color: white;
+  --csv-delete-bg-color: #F66;
+  --csv-insert-color: white;
+  --csv-insert-bg-color: #66F;
+}
+
+pre {
+  margin: 0;
+  padding: 0;
+}
+
+.csv-textarea {
+  width: 50%;
+  height: 20px;
+}
+
+.csv-container {
+  margin: 10px;
+  font-size: 0.7em;
+}
+
+.csv-file {
+  margin-bottom: 10px;
+  border: solid 1px lightgray;
+}
+
+.csv-header {
+  display: flex;
+  color: white;
+  background-color: #00a1ffff;
+  padding: var(--csv-line-padding);
+}
+
+.csv-column {
+  display: inline-block;
+  flex: 1;
+}
+
+.csv-hunk {
+  display: flex;
+  border-bottom: solid 1px lightgray;
+}
+
+.csv-normal {
+  flex: 1;
+  display: inline-block;
+  line-height: 1;
+  padding: var(--csv-line-padding);
+  overflow: clip;
+}
+
+.csv-insert {
+  flex: 1;
+  display: inline-block;
+  color: var(--csv-insert-color);
+  background-color: var(--csv-insert-bg-color);
+  line-height: 1;
+  padding: var(--csv-line-padding);
+  overflow: clip;
+}
+
+.csv-delete {
+  flex: 1;
+  display: inline-block;
+  color: var(--csv-delete-color);
+  background-color: var(--csv-delete-bg-color);
+  line-height: 1;
+  padding: var(--csv-line-padding);
+  overflow: clip;
+}
+
+.csv-state {
+  width: 17px;
+  display: inline-block;
+  color: #F88;
+  line-height: 1;
+  padding: var(--csv-line-padding);
+  overflow: clip;
+}
+
+.csv-left {
+  border-right: solid 1px lightgray;
+}
+
+.csv-button {
+  outline: none; 
+  float: right;
+}
+
+.csv-margin-button {
+  margin-right: 10px;
+  outline: none; 
+  float: right;
+}
+
+.csv-code-normal {
+  flex: 1;
+  display: inline-block;
+  line-height: 1;
+  padding: var(--csv-line-padding);
+  overflow: clip;
+}
+
+.csv-code {
+  display: inline;
+  padding: 0;
+  margin: 0;
+}
+
+.csv-code-added {
+  color: var(--csv-insert-color);
+  background-color: var(--csv-insert-bg-color);
+  padding: 0;
+  margin: 0;
+}
+
+.csv-code-removed {
+  color: var(--csv-delete-color);
+  background-color: var(--csv-delete-bg-color);
+  padding: 0;
+  margin: 0;
+}
+
+.csv-top-header {
+  height: 24px;
+  top: 0;
+  padding: 4px 10px 6px 10px;
+  font-size: 0.7em;
+  position: sticky;
+  background-color: white;
+  border-bottom: solid 1px lightgray;
+}
+
+.csv-text-input {
+  margin-right: 10px;
+  float: right;
+}
