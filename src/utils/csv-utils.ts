@@ -38,6 +38,6 @@ export const csvToEnv = (csv: string, pos: string) => {
     }
     return sum;
   }, [] as string[]);
-  console.log(sum);
+  sum.push("");
   return sum.join("\n");
 };
