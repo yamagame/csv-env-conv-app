@@ -1,4 +1,4 @@
-const delim = ",";
+const delim = "\t";
 
 export function parse(src: string) {
   const row = [];

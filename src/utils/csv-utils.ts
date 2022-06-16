@@ -1,3 +1,5 @@
+import { parse } from "utils/csv-parser";
+
 const alphaToNumber = (str: string) => {
   const c = str.charCodeAt(0);
   const code_A = "A".charCodeAt(0);
@@ -24,15 +26,13 @@ const strToPos = (pos: string) => {
 };
 
 export const csvToEnv = (csv: string, pos: string) => {
-  const csvArray = csv.split("\n").map((line) => {
-    return line.split("\t").map((v) => ({ value: v }));
-  });
+  const csvArray = parse(csv).map((v) => v);
   const p = strToPos(pos);
   const sum = csvArray.reduce((sum, row, rowInd) => {
     if (rowInd >= p.startLine) {
       const name = row[p.name]?.value || "";
       const value = row[p.value]?.value || "";
-      const line = `${name}=${value}`;
+      const line = `${name}=${value.replace(/\n/g, "")}`;
       const RE_INI_KEY_VAL = /^\s*([\w.-]+)\s*=\s*(.*)?\s*$/;
       if (line.match(RE_INI_KEY_VAL)) sum.push(line);
     }
